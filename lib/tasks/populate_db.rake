@@ -3,6 +3,8 @@ namespace :db do
   task populate: :environment do
 
     populateUser if User.count < 10
+    populateSkills if Skill.count <
+     50
     
   end
 end 
@@ -25,3 +27,21 @@ def populateUser
   end
 end 
 
+def populateSkills
+  @users = User.all
+  @users.each do |user|
+
+
+    tit = Faker::Lorem.words(3).to_s
+    des = Faker::Lorem.sentences(3).to_s
+
+    r= rand(10)
+
+    r.times do
+      tit = Faker::Lorem.words(3).to_s
+      des = Faker::Lorem.sentences(3).to_s
+      todo_user = Skill.create!(user_id: user.id ,title: tit,
+                          description: des)
+    end
+  end
+end
