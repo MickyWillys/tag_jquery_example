@@ -1,4 +1,5 @@
 TagJquery::Application.routes.draw do
+  root 'skills#index'
   resources :skills
 
   resources :todos
