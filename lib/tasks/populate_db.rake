@@ -19,8 +19,8 @@ def populateUser
 
     r.times do
       user_id= user_db.id 
-      tit = Faker::Lorem.words(3).to_s
-      des = Faker::Lorem.sentences(3).to_s
+      tit = Faker::Lorem.words(3) * " "
+      des = Faker::Lorem.sentences(3) * " "
       todo_user = Todo.create!(user_id: user_id ,title: tit,
                           description: des)
     end
@@ -31,15 +31,11 @@ def populateSkills
   @users = User.all
   @users.each do |user|
 
-
-    tit = Faker::Lorem.words(3).to_s
-    des = Faker::Lorem.sentences(3).to_s
-
     r= rand(10)
 
     r.times do
-      tit = Faker::Lorem.words(3).to_s
-      des = Faker::Lorem.sentences(3).to_s
+      tit = Faker::Lorem.words(3) * " "
+      des = Faker::Lorem.sentences(3) * " "
       todo_user = Skill.create!(user_id: user.id ,title: tit,
                           description: des)
     end
