@@ -6,8 +6,7 @@ def show
 end 
 def index
 	if params[:tag]
-	  @skills_2 = Skill.tagged_with(params[:tag])
-	  @users = @skills_2.map{ |skill| skill.user }.uniq
+	  @users = User.tagged(params[:tag])
 	else
 	  @skills = Skill.all
 	end    

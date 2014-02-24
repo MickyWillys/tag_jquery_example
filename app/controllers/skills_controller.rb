@@ -2,7 +2,7 @@ class SkillsController < ApplicationController
 
   def index
     if params[:tag]
-      @skills = Skill.tagged_with(params[:tag])
+      @skills = Skill.tagged_with(params[:tag], :any => true) 
     else
       @skills = Skill.all
     end    
