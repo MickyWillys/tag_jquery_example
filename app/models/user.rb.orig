@@ -1,0 +1,8 @@
+class User < ActiveRecord::Base
+	has_many :todos
+<<<<<<< HEAD
+	has_many :skills
+=======
+  acts_as_taggable
+>>>>>>> cb216d107d0aedf8fc324a2937241d13d6794c08
+end
