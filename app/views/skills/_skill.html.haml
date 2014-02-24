@@ -1,0 +1,11 @@
+%hr
+%h2 
+	= skill.title
+%h4 
+	= skill.description
+
+%p.tag
+	= tag_links(skill)
+%p	
+	= link_to "Edit", edit_skill_path(skill)
+%br

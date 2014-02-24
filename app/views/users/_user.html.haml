@@ -1,0 +1,9 @@
+.row
+	%h1
+		= user.name
+	
+	%ul.tag
+		- user.skills.each do |s|
+			%li
+				= s.title
+				= tag_links(s)

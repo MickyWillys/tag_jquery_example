@@ -1,0 +1,12 @@
+= form_tag("/skills", method: "get") do
+	= label_tag(:tag, "Search for Skills")
+	= text_field_tag(:tag)
+	= submit_tag ("Search")
+
+= form_tag("/users", method: "get") do
+	= label_tag(:tag, "Search for Users")
+	= text_field_tag(:tag)
+	= submit_tag ("Search")
+
+
+%ul= render @skills

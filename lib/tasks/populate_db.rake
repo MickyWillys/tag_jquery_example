@@ -9,6 +9,24 @@ namespace :db do
   end
 end 
 
+namespace :db do
+  desc "Fill database with sample data"
+  task tag: :environment do
+
+    tags = ["computer", "sport", "DIY", "science", "hobby", "leisure", "job"]
+    @skills = Skill.all
+   @skills.each do |s|
+      r = rand(1..3)
+      r.times do
+        t= rand(1..7)
+        s.tag_list.add(tags[t])
+      end
+      s.save
+    end
+      
+  end
+end 
+
 def populateUser
   15.times do |n|
     myname = Faker::Name.first_name + " " + Faker::Name.last_name
