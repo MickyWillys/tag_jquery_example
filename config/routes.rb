@@ -1,4 +1,6 @@
 TagJquery::Application.routes.draw do
+  resources :skills
+
   resources :todos
 
   resources :users
